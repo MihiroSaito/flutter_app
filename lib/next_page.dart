@@ -98,7 +98,6 @@ class NextPage extends StatelessWidget {
                   );
                 },
               ),
-         
             ],
           ),
         ),
