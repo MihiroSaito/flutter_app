@@ -5,11 +5,8 @@ class NextPage extends StatelessWidget {
   NextPage(this.name);
   final String name;
 
-  final myFocusNode = FocusNode();
 
-  String value;
-
-  final myController = TextEditingController();
+  // final items = List<String>.generate(10000, (i) => "Item $i");
 
   @override
   Widget build(BuildContext context) {
@@ -26,82 +23,91 @@ class NextPage extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         color: Colors.white,
-        padding: EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(name),
-              RaisedButton(
-                child: Text("戻る"),
-                onPressed: (){
-                  Navigator.pop(context, 'nextPageの値');
-                },
-              ),
-              RaisedButton(
-                child: Text("進む"),
+        padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text("Map"),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: (){
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.album),
+              title: Text("Album"),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text("Phone"),
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text("Map"),
+            ),
+            ListTile(
+              leading: Icon(Icons.album),
+              title: Text("Album"),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text("Phone"),
+            ),ListTile(
+              leading: Icon(Icons.map),
+              title: Text("Map"),
+            ),
+            ListTile(
+              leading: Icon(Icons.album),
+              title: Text("Album"),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text("Phone"),
+            ),ListTile(
+              leading: Icon(Icons.map),
+              title: Text("Map"),
+            ),
+            ListTile(
+              leading: Icon(Icons.album),
+              title: Text("Album"),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text("Phone"),
+            ),ListTile(
+              leading: Icon(Icons.map),
+              title: Text("Map"),
+            ),
+            ListTile(
+              leading: Icon(Icons.album),
+              title: Text("Album"),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text("Phone"),
+            ),
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text("Map"),
+            ),
+            ListTile(
+              leading: Icon(Icons.album),
+              title: Text("Album"),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text("Phone"),
+            ),
 
-              ),
-              Text(
-                "この文字を装飾します",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                  decoration: TextDecoration.underline
-                ),
-              ),
-              DefaultTextStyle(
-                style: TextStyle(
-                  color: Colors.green
-                ),
-                child: Column(
-                  children: [
-                    Text("この文字はデフォルトです"),
-                    Text("この文字はデフォルトです"),
-                    Text("この文字はデフォルトです"),
-                    Text("この文字はデフォルトです"),
-                    Text("この文字はデフォルトです"),
-                  ],
-                ),
-              ),
-              Text("この文字はデフォルトじゃないです"),
-              TextField(
-                controller: myController,
-                autofocus: true,
-                focusNode: myFocusNode,
-                decoration: InputDecoration(
-                  hintText: 'ここはテキストフィールドです',
-                ),
-                onChanged: (text) {
-                  value = text;
-                  print("値=$value");
-                },
-              ),
-              RaisedButton(
-                child: Text('フォーカス'),
-                onPressed: (){
-                  myFocusNode.requestFocus();
-                },
-              ),
-              RaisedButton(
-                child: Text('出力'),
-                onPressed: (){
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        content: Text(myController.text),
-                      );
-                    },
-                  );
-                },
-              ),
-            ],
-          ),
+
+
+
+
+
+          ],
         ),
-      ),
+        ),
     );
   }
 
