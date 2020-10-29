@@ -24,20 +24,29 @@ class NextPage extends StatelessWidget {
         width: double.infinity,
         color: Colors.white,
         padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-        child: GridView.count(
-          //横に列
-          crossAxisCount: 3,
-          //リストを100個作る
-          children: List.generate(100, (index){
-            return Column(
-              children: [
-                Expanded(
-                  child: Image.asset('images/gorilla.jpg'),
-                ),
-                Text("ゴリラ$index")
-              ],
-            );
-          })
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: <Widget>[
+            Container(
+              child: Image.asset("images/gorilla.jpg"),
+            ),
+            Container(
+              width: 160.0,
+              color: Colors.blue,
+            ),
+            Container(
+              width: 160.0,
+              color: Colors.green,
+            ),
+            Container(
+              width: 160.0,
+              color: Colors.yellow,
+            ),
+            Container(
+              width: 160.0,
+              color: Colors.orange,
+            ),
+          ],
         )
       ),
     );
