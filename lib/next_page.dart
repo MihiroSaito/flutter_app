@@ -24,15 +24,21 @@ class NextPage extends StatelessWidget {
         width: double.infinity,
         color: Colors.white,
         padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-        child: ListView.builder (
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Icon(Icons.android_rounded),
-              title: Text('${items[index]}'),
+        child: GridView.count(
+          //横に列
+          crossAxisCount: 3,
+          //リストを100個作る
+          children: List.generate(100, (index){
+            return Column(
+              children: [
+                Expanded(
+                  child: Image.asset('images/gorilla.jpg'),
+                ),
+                Text("ゴリラ$index")
+              ],
             );
-          },
-        ),
+          })
+        )
       ),
     );
   }
