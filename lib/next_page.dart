@@ -6,7 +6,7 @@ class NextPage extends StatelessWidget {
   final String name;
 
 
-  // final items = List<String>.generate(10000, (i) => "Item $i");
+  final items = List<String>.generate(10000, (i) => "Item $i");
 
   @override
   Widget build(BuildContext context) {
@@ -24,90 +24,16 @@ class NextPage extends StatelessWidget {
         width: double.infinity,
         color: Colors.white,
         padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-        child: ListView(
-          children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text("Map"),
-              trailing: Icon(Icons.arrow_forward_ios),
-              onTap: (){
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.album),
-              title: Text("Album"),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text("Phone"),
-            ),
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text("Map"),
-            ),
-            ListTile(
-              leading: Icon(Icons.album),
-              title: Text("Album"),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text("Phone"),
-            ),ListTile(
-              leading: Icon(Icons.map),
-              title: Text("Map"),
-            ),
-            ListTile(
-              leading: Icon(Icons.album),
-              title: Text("Album"),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text("Phone"),
-            ),ListTile(
-              leading: Icon(Icons.map),
-              title: Text("Map"),
-            ),
-            ListTile(
-              leading: Icon(Icons.album),
-              title: Text("Album"),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text("Phone"),
-            ),ListTile(
-              leading: Icon(Icons.map),
-              title: Text("Map"),
-            ),
-            ListTile(
-              leading: Icon(Icons.album),
-              title: Text("Album"),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text("Phone"),
-            ),
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text("Map"),
-            ),
-            ListTile(
-              leading: Icon(Icons.album),
-              title: Text("Album"),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text("Phone"),
-            ),
-
-
-
-
-
-
-          ],
+        child: ListView.builder (
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Icon(Icons.android_rounded),
+              title: Text('${items[index]}'),
+            );
+          },
         ),
-        ),
+      ),
     );
   }
 
